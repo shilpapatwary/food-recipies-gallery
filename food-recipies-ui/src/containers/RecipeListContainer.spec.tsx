@@ -5,39 +5,40 @@ import { should } from 'chai';
 import sinon from 'sinon';
 import { Provider } from 'react-redux';
 import { AnyAction, createStore } from 'redux';
-import SampleContainer from './RecipieList';
+
+import RecipeListContainer from './RecipeListContainer';
 
 import initialState from '../redux/test/initialState.json';
-import { SampleReactTypes } from '../redux/types';
+import { FoodRecipesTypes } from '../redux/types';
 
 should();
 
 Enzyme.configure({ adapter: new Adapter() });
 
-describe('<SampleContainer/ >', function () {
-    it('should render samples', function () {
+describe('<RecipeListContainer/ >', function () {
+    it('should render recipes', function () {
         const reducer = sinon.fake((currState: any, action: AnyAction) => {
             return currState;
         });
         const state = JSON.parse(JSON.stringify(initialState));
         const store = createStore(reducer, state);
-        const wrapper = mount(<Provider store={store}><SampleContainer></SampleContainer></Provider>);
-        //reducer.calledTwice.should.be.true;
+        shallow(<Provider store={store}>
+            <RecipeListContainer></RecipeListContainer></Provider>);
+        reducer.calledOnce.should.be.true;
     });
 
-    it('should dispatch sample action', function () {
+    it('should dispatch get recipes action', function () {
         const reducer = sinon.fake((currState: any, action: AnyAction) => {
 
             if (action.type.indexOf('@@redux/INIT') === 0) {
                 return currState;
             }
-            action.type.should.contain(SampleReactTypes.SAMPLE_REACT_TYPE);
+            action.type.should.contain(FoodRecipesTypes.GET_RECIPES);
             return currState;
         });
         const state = JSON.parse(JSON.stringify(initialState));
         const store = createStore(reducer, state);
-        const wrapper = mount(<Provider store={store}><SampleContainer /></Provider>);
-        //wrapper.find('.channel-name').first().simulate('click');
-        //reducer.callCount.should.equal(4);
+        shallow(<Provider store={store}><RecipeListContainer /></Provider>);
+        reducer.callCount.should.equal(1);
     });
 })

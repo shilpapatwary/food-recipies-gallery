@@ -2,10 +2,11 @@ import React, { Suspense, lazy } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { Provider } from "react-redux";
 import store from "./store/store";
-import "./styles/App.scss";
+import './styles/RecipieList.scss';
+import './styles/RecipieDetails.scss';
 
-const RecipieListContainer = lazy(() => import('./containers/RecipieList'));
-const RecipieDetails = lazy(() => import ('./containers/RecipieDetails'));
+const RecipieListContainer = lazy(() => import('./containers/RecipeListContainer'));
+const RecipieDetails = lazy(() => import ('./containers/RecipeDetailsContainer'));
 
 const App: React.FC = () => {
   return (
@@ -13,8 +14,8 @@ const App: React.FC = () => {
       <Router>
         <Suspense fallback={<div>Loading ...</div>}>
           <Switch>
-            <Route exact path="/"><RecipieListContainer/></Route>
-            <Route path="/about"><RecipieDetails /></Route>
+            <Route exact path="/" component={RecipieListContainer}></Route>
+            <Route path="/recipe/:id" component={RecipieDetails}></Route>
           </Switch>
         </Suspense>
       </Router>

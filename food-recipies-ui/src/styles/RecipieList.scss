@@ -1,0 +1,73 @@
+@import "./base";
+@import "./layout";
+@import "./variables";
+@import "./typography";
+
+.header_ads {
+  height: 2.5rem;
+  background-color: $color-black;
+}
+.main--menu {
+  margin: 2% 2%;
+}
+.main--menu li {
+  padding-right: 1.5rem;
+  color: $color-grey;
+}
+.main--menu span {
+  padding-right: 1rem;
+}
+.logo {
+  height: 4rem;
+}
+.logo img {
+  height: 100%;
+}
+.header_ads {
+  color: $color-white;
+}
+.ad-link {
+  margin-left: 1rem;
+  border-bottom: 1px solid $color-white;
+  letter-spacing: 0.09375rem;
+  cursor: pointer;
+}
+.recipe-item {
+  width: 30%;
+  margin-bottom: 5%;
+  cursor: pointer;  
+}
+.recipe-image {
+  width: 100%;
+}
+.recipe-list {
+  margin: 5% 10%;
+}
+.recipe-item a {
+  text-decoration: none;
+  color: $color-black;
+}
+@media (max-width: 48rem) {
+  .recipe-list {
+    margin: 5% 7%;
+  }
+  .recipe-item {
+    width: 100%;
+    margin-bottom: 10%;
+  }
+  header .header-menu {
+    flex-direction: column;
+  }
+  .main--menu {
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 5% 0;
+    &:first-child {
+      background-color: $color-antique-white;
+    }
+  }
+  .logo {
+    margin: 7% 0;
+  }
+}

@@ -1,7 +1,22 @@
 
-export async function getSampleContent(){
-    // const response = await fetch('/api/content');
-    // const body = await response.json();
-    // if (response.status !== 200) throw Error(body.message);
-    return ['1', '2', '3'];
+const contentful = require('contentful');
+
+const client = contentful.createClient({
+  space: 'kk2bw5ojx476',
+  environment: 'master', 
+  accessToken: '7ac531648a1b5e1dab6c18b0979f822a5aad0fe5f1109829b8a197eb2be4b84c'
+})
+
+export async function getRecipesContent() {
+     const response = await client.getEntries({
+        content_type: 'recipe',
+        select: 'sys.id,fields.title,fields.photo,fields.tags,fields.description,fields.chef'
+     });
+     const body = await response;
+     if (response.errors) throw Error('error');
+     return {
+         recipes: body.items,
+         assets: body.includes.Asset,
+         entries: body.includes.Entry
+     };
 }

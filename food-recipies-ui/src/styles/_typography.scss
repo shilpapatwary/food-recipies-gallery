@@ -1,8 +1,21 @@
 /**************** Typography *************/
 
 .text--bold {
-    font-weight: bold;
+  font-weight: bold;
 }
 .text-micro {
-    font-size: 0.75rem;
+  font-size: 0.75rem;
+}
+.text-kilo {
+  font-size: 1.5rem;
+}
+.text-mega {
+  font-size: 2.5rem;
+}
+
+
+
+/********** Letter Spacing **********/
+.letter-spacing-large {
+  letter-spacing: 0.09375rem;
 }

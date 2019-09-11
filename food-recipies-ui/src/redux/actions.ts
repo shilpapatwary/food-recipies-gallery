@@ -1,5 +1,7 @@
-import { FoodRecipiesTypes } from './types';
+import { FoodRecipesTypes, RecipeItem } from './types';
 import { action } from 'typesafe-actions';
 
-export const sampleReactAction = () =>  action(FoodRecipiesTypes.SAMPLE_REACT_TYPE)
-export const sampleReactActionAsync = () => action(FoodRecipiesTypes.SAMPLE_REACT_TYPE_ASYNC)
+export const getRecipesAction = () =>  action(FoodRecipesTypes.GET_RECIPES);
+export const getRecipesActionAsync = (recipes: Array<RecipeItem>) => action(FoodRecipesTypes.GET_RECIPES_ASYNC, {recipes});
+
+export const setCurrentRecipeAction = (id: String) =>  action(FoodRecipesTypes.SET_CURRENT_RECIPE, {id});

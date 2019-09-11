@@ -1,23 +1,31 @@
-import { FoodRecipiesState, FoodRecipiesTypes } from "./types";
+import { FoodRecipesState, FoodRecipesTypes } from "./types";
 import { AnyAction } from "redux";
 
 const initialState = {
-  recipies: undefined,
-  currentRecipie: undefined
+  recipes: undefined,
+  currentRecipe: undefined
 };
 
-const FoodRecipieReducer = (currentState: FoodRecipiesState = initialState, action: AnyAction) => {
+const FoodRecipieReducer = (currentState: FoodRecipesState = initialState, action: AnyAction) => {
   switch (action.type) {
-    case FoodRecipiesTypes.SAMPLE_REACT_TYPE_ASYNC:
-      return getSampleContentReducer(currentState, action);
+    case FoodRecipesTypes.GET_RECIPES_ASYNC:
+      return getRecipiesContentReducer(currentState, action);
+    case FoodRecipesTypes.SET_CURRENT_RECIPE:
+      return setCurrentRecipeReducer(currentState, action);
     default:
       return currentState;
   }
 };
 
-function getSampleContentReducer(currentState: FoodRecipiesState, action: AnyAction) {
+function getRecipiesContentReducer(currentState: FoodRecipesState, action: AnyAction) {
   const data = action.payload || action.data;
-  return Object.assign({}, currentState, { data: data });
+  return Object.assign({}, currentState, { recipes: data.recipes });
+}
+
+function setCurrentRecipeReducer(currentState: FoodRecipesState, action: AnyAction) {
+  const id = action.payload.id || action.id;
+  const currentRecipe = currentState.recipes && currentState.recipes.filter(recipe => recipe.sys.id === id)[0];
+  return Object.assign({}, currentState, { currentRecipe: currentRecipe });
 }
 
 export default FoodRecipieReducer;

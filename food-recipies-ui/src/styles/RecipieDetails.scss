@@ -1,0 +1,60 @@
+@import "./base";
+@import "./layout";
+@import "./variables";
+@import "./typography";
+
+.make-favorite {
+  height: 5rem;
+  margin: 3% 0;
+  background-color: $color-antique-white;
+}
+.recipe-details-image {
+  width: 100%;
+  margin-left: -22%;
+  margin-top: -15%;
+}
+.recipe-details {
+  background-color: $color-antique-white;
+  padding: 5% 10%;
+  width: 90%;
+}
+.recipe-details-container {
+  margin: 10%;
+}
+.recipe-chef {
+  margin: 2% 0;
+}
+.recipe-tags {
+  margin: 4% 0;
+}
+.recipe-tag {
+  margin-right: 2%;
+  padding: 2%;
+  background-color: $color-grey;
+  color: $color-white;
+  display: flex;
+  align-items: center;
+  border-radius: 1rem;
+  justify-content: center;
+  width: 17%;
+}
+
+.recipe-favorite {
+  margin: 4% 0;
+}
+.recipe-heart-icon {
+  color: $color-red;
+  margin-left: 3%;
+}
+@media (max-width: 48rem) {
+  .recipe-details-container {
+    flex-direction: column;
+    margin: 0;
+  }
+  .recipe-details {
+    order: 2;
+  }
+  .recipe-details-image {
+    margin: 0;
+  }
+}

@@ -1,23 +1,21 @@
-export enum FoodRecipiesTypes {
-    SAMPLE_REACT_TYPE = '@@types/SAMPLE_REACT_TYPE',
-    SAMPLE_REACT_TYPE_ASYNC = '@@types/SAMPLE_REACT_TYPE_ASYNC'
+export enum FoodRecipesTypes {
+  GET_RECIPES = "@@types/GET_RECIPES",
+  GET_RECIPES_ASYNC = "@@types/GET_RECIPES_ASYNC",
+  SET_CURRENT_RECIPE = "@@types/SET_CURRENT_RECIPE"
+}
+export interface Recipe {
+  title?: String;
+  photo?: any;
+  tags?: any;
+  chef? : any;
+  description: String;
 }
 
-interface RecipieDetail {
-    description: String,
-    title: String,
-    chef: String,
-    photo: String,
-    calories: Number
+export interface RecipeItem {
+  fields: Recipe;
+  sys: any;
 }
-
-interface Recipie {
-    title: String,
-    id: String,
-    photo: String
-}
-
-export interface FoodRecipiesState {
-    recipies?: Array<Recipie>,
-    currentRecipie? : RecipieDetail
+export interface FoodRecipesState {
+  recipes?: Array<RecipeItem>;
+  currentRecipe?: RecipeItem;
 }
