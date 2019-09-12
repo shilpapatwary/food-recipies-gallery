@@ -17,3 +17,15 @@ User can navigate back to home page by clicking on the logo or the browser back 
 All other icons and buttons on the page are not clickable and have been used for design purpose and are features that can be future enhancements.
 
 The application is responsive across mobile, tablet and desktop devices.
+
+### Tech Stack used
+
+React
+Redux
+redux-saga
+scss
+
+Testing:
+Mocha, Chai, Jest, Enzyme
+
+(Unit tests written for components, containers, redux store and sagas)
