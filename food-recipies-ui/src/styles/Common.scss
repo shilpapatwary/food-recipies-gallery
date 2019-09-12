@@ -37,9 +37,6 @@
   height: 3rem;
   background-color: $color-grey;
   color: $color-white;
-  position: fixed;
-  left: 0;
-  bottom: 0;
   width: 100%;
   span {
     margin: 0 1rem;
@@ -48,6 +45,14 @@
 .page-error {
   margin-top: 4rem;
   color: $color-red;
+}
+.main-content {
+  flex: 1;
+}
+.layout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 @media (max-width: 48rem) {
   header .header-menu {

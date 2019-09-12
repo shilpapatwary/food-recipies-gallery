@@ -8,11 +8,11 @@ interface LayoutProps {
 
 const PageLayout: React.FC<LayoutProps> = (props) => { 
     return (
-        <React.Fragment>
+        <section className="layout">
             <Header></Header>
-            <React.Fragment>{props.content}</React.Fragment>
+            <main className="main-content">{props.content}</main>
             <Footer></Footer>
-        </React.Fragment>
+        </section>
     )
 }
 
