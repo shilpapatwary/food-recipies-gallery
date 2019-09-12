@@ -20,3 +20,14 @@ export async function getRecipesContent() {
          entries: body.includes.Entry
      };
 }
+
+export async function getRecipeContent(id: String) {
+  const response = await client.getEntry(id, {
+    content_type: 'recipe',
+    select: 'sys.id,fields.title,fields.photo,fields.tags,fields.description,fields.chef'
+  });
+  const body = await response;
+  console.log(body);
+  if (response.errors) throw Error('error');
+  return body;
+}

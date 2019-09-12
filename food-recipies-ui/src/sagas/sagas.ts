@@ -1,7 +1,16 @@
 import { takeEvery, put, call, fork } from 'redux-saga/effects';
 import { FoodRecipesTypes } from '../redux/types';
-import { getRecipesContent } from './apis';
+import { getRecipesContent, getRecipeContent } from './apis';
+import { AnyAction } from "redux";
 
+export function* getRecipeAsync(recipeData: AnyAction) {
+    const data = yield call(getRecipeContent, recipeData.payload.id);
+    yield put({type: FoodRecipesTypes.GET_RECIPE_ASYNC, data});
+}
+
+function* watchGetRecipe() {
+    yield takeEvery(FoodRecipesTypes.GET_RECIPE, getRecipeAsync)
+}
 
 export function* getRecipesAsync() {
     const data = yield call(getRecipesContent);
@@ -14,4 +23,5 @@ function* watchGetRecipes() {
 
 export default function* root() {
     yield fork(watchGetRecipes);
+    yield fork(watchGetRecipe);
 }

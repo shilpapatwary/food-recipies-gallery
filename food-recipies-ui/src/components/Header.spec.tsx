@@ -9,10 +9,10 @@ should();
 
 Enzyme.configure({ adapter: new Adapter() });
 
-describe("<FoodRecipesHome />", () => {
+describe("<Header />", () => {
     let wrapper: any;
     beforeAll(() => {
-        wrapper = shallow(<Header></Header>);
+        wrapper = shallow(<Header />);
     })
     it('should contain a header ads section', () => {
         wrapper.find(".header_ads").length.should.equal(1);

@@ -19,7 +19,7 @@ export default class RecipeDetails extends React.Component<RecipeDetailsProps, R
              <React.Fragment>
                  <div className="recipe-details-container flex">
                      <div className="recipe-details">
-                         <div className="recipe-title text-mega">{this.props.currentRecipe && this.props.currentRecipe.fields.title}</div>
+                         <div className="recipe-details-title text-mega">{this.props.currentRecipe && this.props.currentRecipe.fields.title}</div>
                          <div className="recipe-chef letter-spacing-large text--bold">{chef}</div>
                          <div className="recipe-tags">
                              <ul className="recipe-tags-list flex text--bold letter-spacing-large text-micro">

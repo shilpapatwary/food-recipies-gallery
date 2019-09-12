@@ -11,7 +11,7 @@ const Header: React.FC = () => {
                 <span className="text-micro ad-link">Click to follow</span>
             </div>
             <div><Menu /></div>
-            <div className="logo flex justify-center"><Link to="/"><img alt="logo" src={logo} /></Link></div>
+            <div className="logo"><Link to="/"><img alt="logo" src={logo} /></Link></div>
         </header>
     )
 }

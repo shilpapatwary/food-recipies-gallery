@@ -3,8 +3,10 @@ import { FoodRecipesState } from '../redux/types';
 import { getRecipesAction } from '../redux/actions';
 import { Dispatch } from 'redux';
 import { connect } from 'react-redux';
-import FoodRecipesHome from '../components/FoodRecipesHome';
+import PageLayout from '../components/PageLayout';
+import RecipeList from '../components/RecipeList';
 import '../styles/RecipieList.scss';
+import Loading from '../components/Loading';
 
 interface RecipieListProps {
     recipes: any
@@ -22,7 +24,9 @@ class RecipeListContainer extends React.Component< RecipieListProps, RecipieList
   }
   render() {
     return (
-      <FoodRecipesHome recipes={this.props.recipes}/>
+      <React.Fragment>
+        {this.props.recipes ? <PageLayout content={<RecipeList recipes={this.props.recipes}></RecipeList>}></PageLayout> : <Loading />}
+      </React.Fragment>
     );
   }
 }

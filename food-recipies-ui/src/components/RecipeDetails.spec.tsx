@@ -16,7 +16,7 @@ describe("<RecipeDetails />", () => {
     );
   });
   it("should contain recipe name ", () => {
-    wrapper.find(".recipe-title").length.should.equal(1);
+    wrapper.find(".recipe-details-title").length.should.equal(1);
   });
   it("should contain recipe image", () => {
     wrapper.find(".recipe-details-image").length.should.equal(1);

@@ -36,7 +36,7 @@
   align-items: center;
   border-radius: 1rem;
   justify-content: center;
-  width: 17%;
+  width: 20%;
 }
 
 .recipe-favorite {
@@ -51,10 +51,20 @@
     flex-direction: column;
     margin: 0;
   }
+  .recipe-details-title {
+    font-size: 2rem;
+  }
   .recipe-details {
     order: 2;
+    width: auto;
   }
   .recipe-details-image {
     margin: 0;
+  }
+  .recipe-favorite {
+    margin: 4% 0 18% 0;
+  }
+  .recipe-tag {
+    width: 30%;
   }
 }
