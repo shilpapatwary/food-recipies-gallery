@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/shilpapatwary/food-recipes-gallery/precache-manifest.5c60ec5d41366821f9bfa101cb2dfd24.js"
+  "/shilpapatwary/food-recipes-gallery/tree/master/food-recipies-ui/precache-manifest.84b3a8f96f6dfdbfe4cd75f23149375e.js"
 );
 
 self.addEventListener('message', (event) => {
@@ -33,7 +33,7 @@ workbox.core.clientsClaim();
 self.__precacheManifest = [].concat(self.__precacheManifest || []);
 workbox.precaching.precacheAndRoute(self.__precacheManifest, {});
 
-workbox.routing.registerNavigationRoute(workbox.precaching.getCacheKeyForURL("/shilpapatwary/food-recipes-gallery/index.html"), {
+workbox.routing.registerNavigationRoute(workbox.precaching.getCacheKeyForURL("/shilpapatwary/food-recipes-gallery/tree/master/food-recipies-ui/index.html"), {
   
   blacklist: [/^\/_/,/\/[^\/?]+\.[^\/]+$/],
 });
