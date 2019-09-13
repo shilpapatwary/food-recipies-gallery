@@ -2,8 +2,9 @@
 
 ## Run the application
 1. cd food-recipies-ui
-2. npm start
-3. localhost: 3000
+2. npm install
+3. npm start
+4. open application at - localhost: 3000
 
 ## Testing the application
 1.npm test
